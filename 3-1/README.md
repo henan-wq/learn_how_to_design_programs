@@ -8,8 +8,8 @@
 下面是以合约、函数头部和用途说明开始的函数`profit`（利润）的描述：
 ```
 ;; profit: number -> number
-;; 对于给定ticket-pricel，利润是收入和成本之差
-(define (profit ticket-pricel) ...)
+;; 对于给定ticket-price，利润是收入和成本之差
+(define (profit ticket-price) ...)
 ```
 利润之所以依赖于票价是因为收入和成本都依赖于票价。  
 下面是其他三个函数的说明：
