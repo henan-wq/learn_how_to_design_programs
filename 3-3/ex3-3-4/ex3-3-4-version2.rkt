@@ -6,19 +6,18 @@
 ;; 管道表面积 = 大圆柱体表面积 - 两个小圆面积 + 小圆柱体表面积 - 两个小圆面积 或
 ;; 管道表面积 = 大圆柱体表面积 + 小圆柱体表面积 - 四个小圆面积
 ;; 其中r=内半径+厚度，h=长度
-(define PI 3.14)
 
 ;; 大圆柱体表面积 = area-of-a-large-cylinder = 2 PI r（r+h）
 (define (area-of-a-large-cylinder thickness h inner-radius)
-  (* 2 PI (+ thickness inner-radius) (+ (+ thickness inner-radius) h)))
+  (* 2 pi (+ thickness inner-radius) (+ (+ thickness inner-radius) h)))
 
 ;; 小圆面积= PI 小圆半径^2
 (define (area-of-circle inner-radius)
-  (* PI (* inner-radius inner-radius)))
+  (* pi (* inner-radius inner-radius)))
 
 ;; 小圆柱体表面积 = area-of-a-small-cylinder = 2 PI 小圆半径（小圆半径+h）
 (define (area-of-a-small-cylinder inner-radius h)
-  (* 2 PI inner-radius (+ inner-radius h)))
+  (* 2 pi inner-radius (+ inner-radius h)))
 
 ;; 管道表面积 = 大圆柱体表面积 + 小圆柱体表面积 - 四个小圆面积
 (define (area-pipe inner-radius thickness h)
