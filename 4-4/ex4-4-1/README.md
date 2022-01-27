@@ -147,3 +147,21 @@
 (= (interest 3000) 135)
 (= (interest 6000) 300)
 ```
+输出结果如下：
+```
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+#true
+> 
+```
