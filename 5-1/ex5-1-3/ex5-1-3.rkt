@@ -35,3 +35,6 @@
 (symbol=? (check-guess3 1 2 3 321) 'Perfect)
 (symbol=? (check-guess3 1 2 3 0) 'TooLarge)
 (symbol=? (check-guess3 1 2 3 500) 'TooSmall)
+
+;; 加载教学包guess.ss，进行游戏
+(guess-with-gui-3 check-guess3)

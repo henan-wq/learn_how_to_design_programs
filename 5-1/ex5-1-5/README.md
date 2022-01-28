@@ -67,14 +67,17 @@
 
 ;; 情况一，全对
 (symbol=? (check-color 'red 'green 'red 'green) 'Perfect)
+
 ;; 情况二 目标1与猜测1相等
 (symbol=? (check-color 'red 'green 'red 'blue) 'OneColorAtCorrectPositon)
 ;; 或目标2与猜测2相等
 (symbol=? (check-color 'red 'green 'blue 'green) 'OneColorAtCorrectPositon)
+
 ;; 情况三 目标1与猜测2相等
 (symbol=? (check-color 'red 'green 'blue 'red) 'OneColorOccurs)
 ;; 或目标2与猜测1相等
 (symbol=? (check-color 'red 'green 'green 'blue) 'OneColorOccurs)
+
 ;; 情况四 目标与猜测分别不等
 (symbol=? (check-color 'red 'green 'blue 'yellow) 'NothingCorrect)
 ;; 使用教学软件的`master.ss`进行游戏
