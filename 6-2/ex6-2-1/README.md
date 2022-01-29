@@ -13,8 +13,14 @@
 答：
 DrRacket提供的教学软件包**draw.ss**包含的绘图操作：
 ```
-clear-solid-line
-clear-solid-rect
-clear-solid-disk
-clear-circle
+(start 300 300)
+(draw-solid-line (make-posn 1 1)(make-posn 5 5) 'red)
+(draw-solid-rect (make-posn 20 10) 50 200 'blue)
+(draw-circle (make-posn 200 10) 50 'red)
+(draw-solid-disk (make-posn 200 10) 50 'green)
+
+;; 暂缓 evaluation 5秒钟
+(sleep-for-a-while 5)
+
+(stop)
 ```
