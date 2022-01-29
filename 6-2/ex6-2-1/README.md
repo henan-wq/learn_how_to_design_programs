@@ -1,17 +1,20 @@
-# 6.2 补充练习：绘制简单图形
+# 习题 6.2.1 按顺序计算下列表达式：
+```
+1. (start 300 300):为后续绘图操作打开一个画布
+2. (draw-solid-line (make-posn 1 1)(make-posn 5 5) 'red)：绘制一条红线；
+3. (draw-solid-rect (make-posn 20 10) 50 200 'blue)：绘制一个宽为50，长为200的蓝色长方形；
+4. (draw-circle (make-posn 200 10) 50 'red)：绘制一个半径为50的红色的圆，圆心在长方形上面一条边上；
+5. (draw-solid-disk (make-posn 200 10) 50 'green)：绘制一个半径为50绿色圆盘，圆心在长方形上面一条边上；
+6. (stop)：关闭画布。
+
+请点击DrRacket的 HeplDesk 菜单项，阅读 draw.ss 的文档
+```
+
+答：
 DrRacket提供的教学软件包**draw.ss**包含的绘图操作：
 ```
-;; 下述结果若是true，就能成功改变画布的状态：
-
-;; 1.在画布上绘制直线，输入为2个posn结构体和1种颜色，其中posn结构体表示直线的起点和终点；
-draw-solid-line
-
-;; 2. 在画布上绘制长方形，它读入4个参数，分别是表示长方形左上角位置的posn结构体，长方形的宽度，长方形的高度，以及边的颜色；
-draw-solid-rect
-
-;; 3. 在画布上绘制圆盘，它读入3个参数，“圆盘中心的posn结构体” “圆盘的半径” “圆盘颜色”
-draw-circle
+clear-solid-line
+clear-solid-rect
+clear-solid-disk
+clear-circle
 ```
-![坐标轴与像素位置](6-2\ex6-2-1\ex6-2-1.png)
-
-![坐标轴与像素位置](ex6-2-1.png)

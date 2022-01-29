@@ -6,4 +6,8 @@
 (draw-solid-rect (make-posn 20 10) 50 200 'blue)
 (draw-circle (make-posn 200 10) 50 'red)
 (draw-solid-disk (make-posn 200 10) 50 'green)
+
+;; 暂缓 evaluation 5秒钟
+(sleep-for-a-while 5)
+
 (stop)
