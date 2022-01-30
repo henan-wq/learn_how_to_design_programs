@@ -35,9 +35,9 @@
     [... ...]))
 
 ;; 阐明与每种情况相关的条件，条件是关于函数参数'color的断言，使用Scheme关系表达式或自定义的函数来表示。
-(= (symbol=? 'color 'red) #true)
-(= (symbol=? 'color 'green) #true)
-(= (symbol=? 'color 'yellow) #true)
+(= (symbol=? 'color 'red) 'red)
+(= (symbol=? 'color 'green) 'green)
+(= (symbol=? 'color 'yellow) 'yellow)
 
 ;; 按设计诀窍写出cond表达式：
 (define (clear-bulb color)
