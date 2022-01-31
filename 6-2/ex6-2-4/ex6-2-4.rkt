@@ -109,10 +109,23 @@
           (draw-circle (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
           (sleep-for-a-while 5)
           (clear-circle (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
-          (draw-solid-disk (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow))]))
+          (draw-solid-disk (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow))]
+    [(and (symbol=? color1 'green)
+          (symbol=? color2 'green))
+     (and (clear-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
+          (draw-circle (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
+          (sleep-for-a-while 5)
+          (clear-circle (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
+          (draw-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green))]
+    [else "test"]))
 
-;; 测试：
-(draw-bulb 'red)
-;; (draw-bulb 'yellow)
+;; 先把灯打开测试：
+;; (draw-bulb 'red)
+(draw-bulb 'yellow)
 ;; (draw-bulb 'green)
 ;; (draw-bulb 'black)
+
+
+;; 再测试switch：
+(sleep-for-a-while 5)
+(switch 'yellow 'yellow)
