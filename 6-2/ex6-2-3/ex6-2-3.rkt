@@ -94,7 +94,7 @@
     [else "Please enter 'red, 'yellow or 'green"]))
 
 ;; 测试：
-;; (draw-bulb 'red)
+(draw-bulb 'red)
 ;; (draw-bulb 'yellow)
-;;(draw-bulb 'green)
-(draw-bulb 'black)
+;; (draw-bulb 'green)
+;; (draw-bulb 'black)

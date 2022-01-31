@@ -1,8 +1,6 @@
-# 练习 6.2.3
-设计函数`draw-bulb`，输入为`'green` `'yellow` 或 `'red` 之一，输出为`true`，效果是打开红绿灯上相应颜色的灯。  
-  
-答：  
-```
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex6-2-4) (read-case-sensitive #t) (teachpacks ((lib "draw.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "draw.rkt" "teachpack" "htdp")) #f)))
 ;; 函数draw-bulb的合约：
 ;; draw-bulb : symbol -> boolean
 
@@ -37,19 +35,19 @@
 ;; (start WIDTH HEIGHT)
 ;; (draw-solid-disk (make-posn X-BULBS Y-RED) BULB-RADIUS 'red)
 ;; (draw-circle (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
-;; (draw-circle (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
+;; (draw-circle (makek-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
 
 ;; 绘制黄灯亮时的灯光
 ;; (start WIDTH HEIGHT)
 ;; (draw-circle (make-posn X-BULBS Y-RED) BULB-RADIUS 'red)
 ;; (draw-solid-disk (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
-;; (draw-circle (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
+;; (draw-circle (makek-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
 
 ;; 绘制绿灯亮时的灯光
 ;; (start WIDTH HEIGHT)
 ;; (draw-circle (make-posn X-BULBS Y-RED) BULB-RADIUS 'red)
 ;; (draw-circle (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
-;; (draw-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
+;; (draw-solid-disk (makek-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
 
 ;; 程序体
 ;; (cond
@@ -95,9 +93,26 @@
           (draw-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green))]
     [else "Please enter 'red, 'yellow or 'green"]))
 
+
+(define (switch color1 color2)
+  (cond
+    [(and (symbol=? color1 'red)
+          (symbol=? color2 'red))
+     (and (clear-solid-disk (make-posn X-BULBS Y-RED) BULB-RADIUS 'red)
+          (draw-circle (make-posn X-BULBS Y-RED) BULB-RADIUS 'red)
+          (sleep-for-a-while 5)
+          (clear-circle (make-posn X-BULBS Y-RED) BULB-RADIUS 'RED)
+          (draw-solid-disk (make-posn X-BULBS Y-RED) BULB-RADIUS 'red))]
+    [(and (symbol=? color1 'yellow)
+          (symbol=? color2 'yellow))
+     (and (clear-solid-disk (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
+          (draw-circle (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
+          (sleep-for-a-while 5)
+          (clear-circle (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow)
+          (draw-solid-disk (make-posn X-BULBS Y-YELLOW) BULB-RADIUS 'yellow))]))
+
 ;; 测试：
-;; (draw-bulb 'red)
+(draw-bulb 'red)
 ;; (draw-bulb 'yellow)
-;;(draw-bulb 'green)
-(draw-bulb 'black)
-```
+;; (draw-bulb 'green)
+;; (draw-bulb 'black)
