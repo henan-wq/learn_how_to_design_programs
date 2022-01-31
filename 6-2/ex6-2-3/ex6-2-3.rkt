@@ -1,8 +1,6 @@
-# 练习 6.2.3
-设计函数`draw-bulb`，输入为`'green` `'yellow` 或 `'red` 之一，输出为`true`，效果是打开红绿灯上相应颜色的灯。  
-  
-答：  
-```
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex6-2-3) (read-case-sensitive #t) (teachpacks ((lib "draw.rkt" "teachpack" "htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "draw.rkt" "teachpack" "htdp")) #f)))
 ;; 函数draw-bulb的合约：
 ;; draw-bulb : symbol -> boolean
 
@@ -100,4 +98,3 @@
 ;; (draw-bulb 'yellow)
 ;;(draw-bulb 'green)
 (draw-bulb 'black)
-```
