@@ -10,7 +10,8 @@
 
 ;; 程序用途：输入一个颜色为color的符号，输出为true并打开红绿灯上相应颜色的灯。
 
-;; 不论我们输入的符号是'green 'yellow 或'red。程序的输出都是true，我们需要找另一种输出的例子来了解程序运算过程中的问题。
+;; 不论我们输入的符号是'green 'yellow 或'red。程序的输出都是true
+;; 我们需要找另一种输出的例子来了解程序运算过程中的问题。
 ;; 例子
 ;; 比如红灯亮的生成图
 ;; (draw-bulb 'red)
@@ -117,7 +118,7 @@
           (sleep-for-a-while 5)
           (clear-circle (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
           (draw-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green))]
-    [else "test"]))
+    [else "The current switch function only provides simple functionality, so other arguments may return this hint"]))
 
 ;; 先把灯打开测试：
 ;; (draw-bulb 'red)

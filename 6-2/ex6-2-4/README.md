@@ -3,7 +3,7 @@
   
 答：  
 ```
-;; 函数switch的寒月：
+;; 函数switch的合约：
 ;; switch : symbol symbol -> boolean
 
 ;; 两个输入分别是color1 color2
@@ -11,7 +11,8 @@
 ;; (define (switch color1 color2) ...)
 
 ;; --------
-;; 以下的做法似乎需要确认当前灯的状态，但我目前不知道如何确认目前亮着的灯的状态是什么……后面可能会学习到，通过上一个练习把灯打开后，顺便将三盏灯的状态保存在不同的变量，而我可以通过在switch函数里对状态与我的输入进行比较而创建函数体。
+;; 以下的做法似乎需要确认当前灯的状态，但我目前不知道如何确认目前亮着的灯的状态是什么……后面可能会学习到这方面的知识。  
+;; 通过上一个练习把灯打开后，顺便将三盏灯的状态保存在不同的变量，而我可以通过在switch函数里对状态与我的输入进行比较而创建函数体。
 
 ;; 程序用途：输入第一个颜色为color1的符号，输入第二个颜色为color2的符号，程序的输出为一个true布尔值。
 ;; 先确认当前亮着的灯是不是color1所代表的颜色，如果是，则关掉它，若不是，则跳过这条指令。
@@ -59,7 +60,7 @@
           (draw-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green))]
     [else "test"])
 ```
-从关闭和打开同一种颜色的灯的情况来完善程序`ex6-2-4`，其他的情况都差不多：
+从关闭和打开同一种颜色的灯的情况来完善程序体，并输出为文件`ex6-2-4.rkt`，其他的情况太复杂先忽略：
 ```
 ;; 函数draw-bulb的合约：
 ;; draw-bulb : symbol -> boolean
@@ -177,7 +178,7 @@
           (sleep-for-a-while 5)
           (clear-circle (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green)
           (draw-solid-disk (make-posn X-BULBS Y-GREEN) BULB-RADIUS 'green))]
-    [else "test"]))
+    [else "The current switch function only provides simple functionality, so other arguments may return this hint"]))
 
 ;; 先把灯打开测试：
 ;; (draw-bulb 'red)
