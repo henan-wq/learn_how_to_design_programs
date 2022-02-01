@@ -94,9 +94,11 @@ Teachpack: draw.rkt.
 (movie-producer (make-movie xx yy))
 ;; 输出应是 'yy
 ```
+---
 给出描述movie-title、movie-producer和make-movie间关系的等式。  
+---
 函数的输入和输出都可以是结构体。假如要定义一个函数，记录某明星唱片的销售增量，函数输入为一个star结构体，输出也为一个star结构体，显而易见，这个输出的结构体除了销量值外，与输入结构体相同。现假定要将某明星的唱片销售量增加 20000 张。  
-先使用合约、头部和用途说明给出函数的基本买哦书：
+先使用合约、头部和用途说明给出函数的基本：
 ```
 ;; increment-sales : star -> star
 ;; 将star的销量值增加 20000
@@ -119,4 +121,20 @@ Teachpack: draw.rkt.
   ... (star-instrument a-star)...
   ... (star-sales a-star) ... )
 ```
+完整程序如下（`ex6-3-2-part3.rkt`）：  
+```
+(define-struct star (last first instrument sales))
+(define AAA (make-star 'ThePhantomMenace 'Lucas 'vocals 12200))
+;; 定义一个函数，参数是一个结构体
+;; 函数的用途是，输入一个结构体，输出还是这个结构体，但其中的字段值改变了
+;; 字段值的改变就是函数的主体：也就是说函数内部就是定义字段值的表达式。
+(define (increment-sales a-star)
+  (make-star (star-last a-star)
+               (star-first a-star)
+               (star-instrument a-star)
+               (+ (star-sales a-star) 20000)))
+(increment-sales AAA)
 
+;;输出
+;; (make-star 'ThePhantomMenace 'Lucas 'vocals 32200)
+```
