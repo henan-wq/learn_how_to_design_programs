@@ -8,7 +8,7 @@
         - `posn-y`：选择器，用于提取 `y` 坐标。  
   
 例子：  
-1. 表达式`(define=struct entry(name zip phone))`  
+1. 表达式`(define-struct entry(name zip phone))`  
 2. 构造器前缀是`make-entry`，每个`entry`结构体有3个字段：`name`、`zip`和`phone`。
 3. 也引入了3个新的选择器：`entry-name` `entry-zip`和`entry-phone`。
 4. 输入有3个值：`(make-entry 'PeterLee 15270 '606-7771)`  
@@ -18,4 +18,23 @@
 值               'PeterLee       15270           '606-7771
 ```
 我们也可以给结构体取名字：`(define phonebook (make-entry 'PeterLee 15270 '606-7771))`  
-就可以在Interaction窗口使用选择器提取结构体中任何一个字段中的数据
+就可以在Interaction窗口使用选择器提取结构体中任何一个字段中的数据。  
+完整程序如下：  
+```
+;; 定义结构体,能看到结构体是entry，通过使用“操作”创建数据：字段名是name、zip和phone
+(define-struct entry (name zip phone))
+
+;; 分别给3个字段输入3个值，并给我们的结构体定义为一个函数
+(define phonebook (make-entry 'PeterLee 15270 '606-7771))
+
+;; 在Interaction窗口使用选择器提取结构体中任何一个字段中的数据。
+(entry-name phonebook)
+```
+输出如下：  
+```
+Welcome to DrRacket, version 8.3 [cs].
+Language: Beginning Student [custom]; memory limit: 128 MB.
+Teachpack: draw.rkt.
+'PeterLee
+> 
+```
