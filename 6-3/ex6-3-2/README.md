@@ -8,7 +8,7 @@
 (movie-producer (make-movie 'TheEmpireStrikesBack 'Lucas))。
 ```
 答：  
-`'ThePhantomMenace`
+`'ThePhantomMenace`  
 `'Lucas`  
 解题过程（`ex6-3-2.rkt`）：  
 ```
@@ -66,7 +66,8 @@ Teachpack: draw.rkt.
 'Lucas
 > 
 ```
-  
+---
+
 假定x和y代表任意的符号，计算下列表达式：
 ```
 1.
