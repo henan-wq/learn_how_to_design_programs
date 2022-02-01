@@ -38,3 +38,28 @@ Teachpack: draw.rkt.
 'PeterLee
 > 
 ```
+一个很棒的例子：  
+1. 比如创建明星的信息格式：`(define-struct star (last first instrument sales))`  
+2. 创建star结构体：
+```
+(make-star 'Friedman 'Dan 'ukelele 19004)
+(make-star 'Talcott 'Carolyn 'banjo 80000)
+(make-star 'Harper 'Robert 'bagpipe 27860)
+```
+3. 可以选择一个称为E的明星结构体名字，`(star-first E)`  
+完整程序如下：  
+```
+(define-struct star (last first instrument sales))
+(define E (make-star 'Friedman 'Dan 'ukelele 19004))
+(star-first E)
+(star-last E)
+```
+输出如下：  
+```
+Welcome to DrRacket, version 8.3 [cs].
+Language: Beginning Student [custom]; memory limit: 128 MB.
+Teachpack: draw.rkt.
+'Dan
+'Friedman
+> 
+```
