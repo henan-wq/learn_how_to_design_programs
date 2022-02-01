@@ -15,3 +15,8 @@
 (make-star 'Talcott 'Carolyn 'banjo 80000)
 (make-star 'Harper 'Robert 'bagpipe 27860)
 (star-first E)
+
+(define-struct star (last first instrument sales))
+(define E (make-star 'Friedman 'Dan 'ukelele 19004))
+(star-first E)
+(star-last E)
