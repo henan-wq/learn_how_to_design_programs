@@ -81,7 +81,7 @@
 ;; (deifne (process-student a-student a-teacher)
 ;; ...(student-last a-student)...
 ;; ...(student-first a-student)...
-;; ...(student-teacher a-student)...
+;; ...(student-teacher a-student)...)
 ;; 定义：
 (define (check a-student a-teacher)
   (cond
@@ -150,3 +150,7 @@
 ;; (make-student 'Wilson 'Fritz 'Zoom)
 ```
 ---
+图6-5以表的形式给出了处理复合数据的函数设计诀窍。在实践中，一个函数可能包含许多其他函数，它们都对相同类型的输入数据进行处理。  
+因此模板可以被重用多次，这也意味着例子的构造应该在模板设计之后。请将图6.5与图2.2和图4.1中的设计诀窍进行比较。  
+
+![图6.5](image-6-5.JPG "图6.5")
