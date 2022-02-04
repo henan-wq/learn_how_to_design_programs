@@ -45,3 +45,20 @@
 ;; 预期值：
 (make-student 'Find 'Matthew 'Amanada)
 ```
+---
+例子：下面考虑两个读入*student*结构体的函数。第一个函数是*check*，如果教师的名字等于*a-teacher*，该函数返回学生的名字，否则返回`'none`：
+```
+(check (make-student 'Wilson 'Fritz 'Harper) 'Harper)
+;; 预期值
+'Wilson
+(check (make-student 'Wilson 'Fritz 'Lee) 'Harper)
+;; 预期值：
+'none
+```
+第二个函数*transfer*，在它返回的结构体中，*teacher*字段的值为*a-teacher*，除了*teacher*字段以外，其余成分的值和`a-student`一样：
+```
+(transfer (make-student 'Wilson 'Fritz 'Harper) 'Lee)
+;; 预期值
+(make-student 'Woops 'Helen 'Fisler)
+```
+---
