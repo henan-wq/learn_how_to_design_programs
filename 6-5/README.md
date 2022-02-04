@@ -55,7 +55,7 @@
 ;; 预期值：
 'none
 ```
-自己写的过程：
+自己写的过程（完整代码见`6-5-part-2.rkt`）：
 ```
 ;; 例子：下面考虑两个读入*student*结构体的函数。第一个函数是*check*，
 ;; 如果教师的名字等于*a-teacher*，该函数返回学生的名字，否则返回`'none`：
@@ -96,10 +96,57 @@
 ;; 预期值
 ;; 'none
 ```
+---
 第二个函数*transfer*，在它返回的结构体中，*teacher*字段的值为*a-teacher*，除了*teacher*字段以外，其余成分的值和`a-student`一样：
 ```
 (transfer (make-student 'Wilson 'Fritz 'Harper) 'Lee)
 ;; 预期值
-(make-student 'Woops 'Helen 'Fisler)
+(make-student 'Woops 'Helen 'Lee)
+```
+自己写的过程（`6-5-part-3.rkt`）：
+```
+;; 第二个函数transfer，在它返回的结构体中，teacher字段的值为a-teacher，
+;; 除了teacher字段以外，其余成分的值和a-student一样
+;; 数据分析和定义：
+(define-struct student (last first teacher))
+;; student 是结构体(make-student l f t)，其中l、f和t是符号
+;; 合约：process-teacher : student symbol -> student
+;; 用途说明：如教师的名字为'Lee,创建一个student结构体，把教师的名字替换为‘Lee
+
+;; 例子：
+;; (transfer (make-student 'Wilson 'Fritz 'Harper) 'Lee)
+;; =
+;; (make-student 'Wilson 'Fritz 'Lee)
+;; (transfer (make-student 'Wilson 'Fritz 'Tom) 'Zoom)
+;; =
+;; (make-student 'Wilson 'Fritz 'Zoom)
+;; 模板：
+;; (define (transfer a-student a-teacher)
+;; ...(student-last a-student)...
+;; ...(student-first a-student)...
+;; ...(student-teacher a-student)...)
+;; 定义：
+(define (transfer a-student a-teacher)
+  (cond
+    [(symbol=? (student-teacher a-student) a-teacher) a-student]
+    [else (make-student (student-last a-student)
+                        (student-first a-student)
+                        a-teacher)]))
+;; 测试：
+(transfer (make-student 'Wilson 'Fritz 'Harper) 'Lee)
+;; 预期值：
+;; (make-student 'Wilson 'Fritz 'Lee)
+
+
+
+;; 书里的方法：
+(define (transfer-2 a-student a-teacher)
+  (make-student (student-last a-student)
+                (student-first a-student)
+                a-teacher))
+;; 测试：
+(transfer-2 (make-student 'Wilson 'Fritz 'Tom) 'Zoom)
+;; 预期值：
+;; (make-student 'Wilson 'Fritz 'Zoom)
 ```
 ---
