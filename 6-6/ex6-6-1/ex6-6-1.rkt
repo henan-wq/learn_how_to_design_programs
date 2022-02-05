@@ -17,3 +17,16 @@
 ;; undefined-center是number。
 
 ;; 合约： circle : structure number symbol -> undefined-type
+;; 合约： center : number -> number
+;; 用途说明：结构体circle包括圆心、半径和圆周的颜色，其中圆心也是一个结构体。
+
+;; 例子：
+;; (circle (center radius circumference-color))
+;; =
+;; (make-circle structure number symbol)
+
+;; 模板：
+;; (define (fun-for-circle a-circle)
+;; ...(circle-center a-circle)...
+;; ...(circle-radius a-circle)...
+;; ...(circle-circumference-color)...)
