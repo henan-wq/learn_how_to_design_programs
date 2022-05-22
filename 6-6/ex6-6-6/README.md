@@ -10,3 +10,15 @@
     [(draw-and-clear-circle a-circle) (translate-circle a-circle delta)]
     [else a-circle]))
 ```
+
+该函数在画布上绘制了一个圆然后消除，接着产生一个新的circle结构体，以便另一次执行该函数时将它移到一个新的位置：  
+```
+(start 200 100)
+
+(draw-a-circle
+    (move-circle 10
+        (move-circle 10
+            (move-circle 10
+        (move-circle 10 ... a circle ...)))))
+```  
+该表达式将一个圆移动了4次，每次10个像素，并在画布上显示了这一移动。最后一个`draw-a-circle`是必需的，否则将无法看到最后的圆。  
