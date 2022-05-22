@@ -43,3 +43,26 @@
 (draw-a-circle (make-circle (make-posn 50 50) 50 'red))
 
 ; --------------------------------------------------
+
+;; in-circle? : circle posn -> boolean
+;; determines if p is inside the circle c.
+
+;; EXAMPLES
+;; the point (6,5) is inside the circle located at (6,5) with radius 1
+;; the point (5.5,5) is inside the circle located at (6,5) with radius 1
+;; the point (1,5) is outside the circle located at (6,5) with radius 1
+
+(define (in-circle? c p)
+    (<= (sqrt (+ (sqr (- (posn-x (circle-center c))
+                         (posn-x p)))
+                 (sqr (- (posn-y (circle-center c))
+                         (posn-y p)))))
+        (circle-radius c)))
+
+;; EXAMPLES TURNED INTO TESTS
+
+(in-circle? (make-circle (make-posn 6 5) 1 'blue) (make-posn 6 5)) "should be" true
+(in-circle? (make-circle (make-posn 6 5) 1 'green) (make-posn 5.5 5)) "should be" true
+(in-circle? (make-circle (make-posn 6 5) 1 'yellow) (make-posn 1 5)) "should be" false
+
+; --------------------------------------------------
